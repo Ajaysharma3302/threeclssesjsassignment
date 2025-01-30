@@ -50,7 +50,6 @@ class BigCatManager {
         this.container = document.createElement('div');
     }
 
-    // Function to add a new Big Cat
     addCat() {
         const species = prompt('Enter species name:');
         const size = prompt('Enter size (e.g., 10ft):');
@@ -66,27 +65,25 @@ class BigCatManager {
         }
     }
 
-    // Function to delete the last Big Cat
     deleteCat() {
         if (this.cats.length > 0) {
-            this.cats.pop(); // Remove the last cat from the array
+            this.cats.pop(); 
             this.renderCats();
         } else {
             alert('No cats to delete!');
         }
     }
 
-    // Function to render all cats to the DOM
-    renderCats() {
-        this.container.innerHTML = ''; // Clear the container before re-rendering
 
-        // Add each cat table to the container
+    renderCats() {
+        this.container.innerHTML = ''; 
+
         this.cats.forEach(cat => {
             this.container.appendChild(cat.createTable());
         });
     }
 
-    // Function to create the buttons (Add, Delete)
+
     createButtons() {
         const buttonContainer = document.createElement('div');
         const addButton = document.createElement('button');
@@ -103,11 +100,10 @@ class BigCatManager {
         this.container.appendChild(buttonContainer);
     }
 
-    // Function to initialize the BigCatManager
     initialize() {
         document.body.appendChild(this.container);
         this.createButtons();
-        this.renderCats(); // Initially render any existing cats (if needed)
+        this.renderCats(); 
     }
 }
 const manager = new BigCatManager();
